@@ -1,14 +1,16 @@
 #!/usr/bin/python3
+#Script by F1neg4n
 
 import nmap
 import os
 
 def welcome():
     welc = 'NMAP Port Scanner'
-    info = '[INFO] Python script to scan ports with NMAP by F1neg4n\n'
+    info = '[INFO] Python script to scan ports with NMAP'
     os.system('clear')
     print(welc + '\n' + '*' * len(welc))
     print(info)
+    print('------------')
     return
 
 def getAddress():
@@ -27,6 +29,7 @@ def getAddress():
 def scannerNmap():
     try:
         host = getAddress()
+        print('[+] Scanning open ports ==> ' + host)
         nm = nmap.PortScanner()
         results = nm.scan(host)
         os.system('clear')
@@ -35,8 +38,8 @@ def scannerNmap():
             print('Host\t: %s' % (host))
             print('State\t: %s' % nm[host].state())
             for proto in nm[host].all_protocols():
+                print('Protocol: %s' % proto)
                 print('------------')
-                print('Protocol : %s' % proto)
                 lport = nm[host][proto].keys()
                 sorted(lport)
                 for port in lport:
