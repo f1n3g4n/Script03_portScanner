@@ -11,4 +11,4 @@ Coming soon!
 2. Python-nmap `sudo pip install python-nmap` and `sudo apt install python3-nmap`.
 3. NMAP `sudo apt install namp`
 
-#### Enjoy, F1neg4n!
+#### Enjoy it, F1neg4n!
