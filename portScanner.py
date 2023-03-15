@@ -1,30 +1,28 @@
 #!/usr/bin/python3
-#Script by F1neg4n
+# Created by F1neg4n
 
-import nmap
-import os
+import os, nmap
 
 def welcome():
     welc = 'NMAP Port Scanner'
-    info = '[INFO] Python script to scan ports with NMAP'
+    info = '[INFO] Python script with NMAP to scan ports'
     os.system('clear')
     print(welc + '\n' + '*' * len(welc))
-    print(info)
-    print('------------')
+    print(info + '\n' + '-' * len(info))
     return
 
 def getAddress():
     welcome()
     try:
-        ip = input('[+] Enter the IP Address: ')
-        while(ip == ''):
-            ip = input('[+] Please, enter the IP Address: ')
+        ipAddress = input('[+] Enter the IP Address: ')
+        while(ipAddress == ''):
+            ipAddress = input('[+] Please, enter the IP Address: ')
     except(KeyboardInterrupt):
         os.system('clear')
         welcome()
         print('[-] Interrupted by user!')
         exit()
-    return ip
+    return ipAddress
 
 def scannerNmap():
     try:
